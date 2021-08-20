@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace LerArquivoXML
 {
@@ -15,6 +10,35 @@ namespace LerArquivoXML
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            XmlTextReader reader = new XmlTextReader(txtCaminhoXML.Text);
+            ArrayList elementos = new ArrayList();
+
+            while (reader.Read())
+            {
+                switch (reader.NodeType)
+                {
+                    case XmlNodeType.Element:
+                        if (reader.HasAttributes)
+                        {
+                            while (reader.MoveToNextAttribute())
+                            {
+                                elementos.Add(reader.Value);
+                            }
+                        }
+                        break;
+                    case XmlNodeType.Text:
+                        elementos.Add(reader.Value);
+                        break;
+                }
+            }
+            foreach (var num in elementos)
+            {
+                
+            }
         }
     }
 }
