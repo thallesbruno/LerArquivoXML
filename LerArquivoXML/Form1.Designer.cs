@@ -33,6 +33,7 @@ namespace LerArquivoXML
             this.txtCaminhoXML = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.lstXML = new System.Windows.Forms.ListBox();
+            this.btnLerTag = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +60,7 @@ namespace LerArquivoXML
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(12, 68);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(363, 31);
+            this.button1.Size = new System.Drawing.Size(197, 31);
             this.button1.TabIndex = 2;
             this.button1.Text = "Acessar e ler o arquivo XML";
             this.button1.UseVisualStyleBackColor = true;
@@ -73,11 +74,25 @@ namespace LerArquivoXML
             this.lstXML.Size = new System.Drawing.Size(359, 329);
             this.lstXML.TabIndex = 3;
             // 
+            // btnLerTag
+            // 
+            this.btnLerTag.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnLerTag.FlatAppearance.BorderSize = 2;
+            this.btnLerTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLerTag.Location = new System.Drawing.Point(215, 68);
+            this.btnLerTag.Name = "btnLerTag";
+            this.btnLerTag.Size = new System.Drawing.Size(160, 31);
+            this.btnLerTag.TabIndex = 4;
+            this.btnLerTag.Text = "Ler tags específicas";
+            this.btnLerTag.UseVisualStyleBackColor = true;
+            this.btnLerTag.Click += new System.EventHandler(this.btnLerTag_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 450);
+            this.Controls.Add(this.btnLerTag);
             this.Controls.Add(this.lstXML);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtCaminhoXML);
@@ -98,6 +113,7 @@ namespace LerArquivoXML
         private System.Windows.Forms.TextBox txtCaminhoXML;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox lstXML;
+        private System.Windows.Forms.Button btnLerTag;
     }
 }
 
